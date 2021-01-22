@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row">
  
       <section class="col-3">
@@ -10,7 +10,7 @@
           
         </select>
  
-        <h5 class="text-warning ml-3">Brands</h5>
+        <h5 class="text-warning ml-3" *ngIf="brands">Brands</h5>
         <ul class="list-group my-3">
           <li class="list-group-item" 
           *ngFor="let brand of brands"
@@ -22,7 +22,7 @@
           </li>
         </ul>
  
-        <h5 class="text-warning ml-3">Types</h5>
+        <h5 class="text-warning ml-3" *ngIf="types">Types</h5>
         <ul class="list-group my-3">
           <li class="list-group-item" 
           *ngFor="let type of types"
