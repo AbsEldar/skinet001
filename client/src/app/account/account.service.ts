@@ -13,7 +13,7 @@ export class AccountService {
 
   baseUrl = environment.apiUrl;
   private currentUserSource = new BehaviorSubject<IUser>(null);
-  currentUser = this.currentUserSource.asObservable();
+  currentUser$ = this.currentUserSource.asObservable();
 
   constructor(private http: HttpClient, private router: Router) { }
 
