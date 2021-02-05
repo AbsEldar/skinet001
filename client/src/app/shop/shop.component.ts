@@ -13,9 +13,9 @@ import { ShopService } from './shop.service';
 export class ShopComponent implements OnInit {
 
   @ViewChild('search', {static: false}) searchTerm: ElementRef;
-  products: IProduct[];
-  brands: IBrand[];
-  types: IType[];
+  products: IProduct[] = [];
+  brands: IBrand[] = [];
+  types: IType[] = [];
  
   shopParams = new ShopParams();
   totalCount: number;
