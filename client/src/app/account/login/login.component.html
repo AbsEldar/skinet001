@@ -7,7 +7,7 @@
              
             </div>
           
-            <div class="form-label-group">
+            <!-- <div class="form-label-group">
               <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address">
               <label for="inputEmail">Email address</label>
 
@@ -23,9 +23,11 @@
                 && loginForm.get('email').errors['pattern']
                 ">Email address is not valid</span>
 
-            </div>
+            </div> -->
+
+
           
-            <div class="form-label-group">
+            <!-- <div class="form-label-group">
               <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password" >
               <label for="inputPassword">Password</label>
 
@@ -35,7 +37,10 @@
                 && loginForm.get('password').errors['required']
                 ">Password is required</span>
 
-            </div>
+            </div> -->
+
+            <app-text-input formControlName = "email" [label] = "'Email Address'"></app-text-input>
+            <app-text-input formControlName = "password" [label] = "'Password'" [type]="'password'"></app-text-input>
           
             
             <button [disabled]="loginForm.invalid" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
