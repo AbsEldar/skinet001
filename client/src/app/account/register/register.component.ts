@@ -11,6 +11,7 @@ import { AccountService } from '../account.service';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
+  errors: string[];
 
   constructor(
               private fb: FormBuilder, 
@@ -24,7 +25,7 @@ export class RegisterComponent implements OnInit {
   createRegisterForm() {
     this.registerForm = this.fb.group({
       displayName: [null, [Validators.required]],
-      email: [null, [Validators.required, , Validators.pattern('^[\\w-\\.]+@([\\w-]+\.)+[\\w-]{2,4}$')]],
+      email: [null, [Validators.required, Validators.pattern('^[\\w-\\.]+@([\\w-]+\.)+[\\w-]{2,4}$')]],
       password: [null, [Validators.required]]
     })
   }
@@ -34,6 +35,8 @@ export class RegisterComponent implements OnInit {
       this.router.navigateByUrl('/shop');
     }, error => {
       console.log(error);
+      this.errors = error.errors;
+      
     });
   }
 
